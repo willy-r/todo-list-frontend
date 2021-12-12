@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+   
+    <title>TODO List | Suas tarefas</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- CSS local. -->
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/todo.css">
+
+    <!-- jQuery 3.6.0 -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous">
+    </script>
+
+    <!-- DayJS 1.10.7 -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"
+      integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer">
+    </script>
+    <!-- Locale PT-BR para o DayJS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/locale/pt-br.min.js"
+      integrity="sha512-wv/YwKtyrkshVW2ZHITPiMVoHFsJbL/CkDl/rvmVZ3X6OlqJVib3qRoAfkRKdCPrgw+AO+zrjX7QVgWmKq9buQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer">
+    </script>
+
+    <!-- Font Awesome 5 -->
+    <script src="https://kit.fontawesome.com/190e245c5e.js" crossorigin="anonymous"></script>
+
+    <!-- JS local. -->
+    <script src="../js/todo.js" defer></script>
+  </head>
+  <body>
+    <div class="container container--app">
+      <header>
+        <nav class="nav">
+          <h1 class="nav__logo">
+            <a href="./todo.html">TODO</a>
+          </h1>
+
+          <ul class="nav__list">
+            <li>Boas vindas, <span id="username"></span>!</li>
+            <li>
+              <button class="btn btn--navbar" id="logout" type="button" title="Sair">
+                <span class="fas fa-sign-out-alt"></span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="dates">
+        <div>
+          <span class="dates__day" id="day"></span>
+          <div>
+            <p class="dates__month" id="month-str"></p>
+            <p class="dates__year" id="year"></p>
+          </div>
+        </div>
+        
+        <p class="dates__week" id="week-day"></p>
+      </section>
+
+      <main>
+        <section class="todo">
+          <div>
+            <form>
+              <fieldset>
+                <label class="visually-hidden" for="title">Digite o título da tarefa:</label>
+                <input class="todo__input" id="title" type="text" maxlength="255" required>
+                
+                <button class="btn" id="add-task" type="submit" title="Adicionar tarefa">
+                  <span class="fas fa-plus"></span>
+                </button>
+              </fieldset>
+            </form>
+          </div>
+
+          <!-- Aqui vão as tarefas que estão para serem feitas. -->
+          <ul id="todo"></ul>
+          
+          <details>
+            <summary>Fazer depois</summary>
+            <!-- Aqui vão as tarefas que estão para serem feitas depois. -->
+            <ul id="todo-later"></ul>
+          </details>
+
+          <details>
+            <summary>Completo</summary>
+            <!-- Aqui vão as tarefas que já estão feitas. -->
+            <ul id="done"></ul>
+          </details>
+
+          <div>
+            <button class="btn" type="button" title="Excluir o progresso de hoje">
+              Resetar progresso
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

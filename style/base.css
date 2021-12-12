@@ -1,0 +1,100 @@
+:root {
+  --ff-ubuntu-400: Ubuntu, sans-serif;
+
+  --clr-main-gradient: linear-gradient(90deg, #9dade5 0%, #74e9d6 100%);
+  --clr-white: #fff;
+  --clr-black: #000;
+  --clr-black-400: #1d1a1a;
+  --clr-border: #eee8e8;
+
+  --clr-success: #009944;
+  --clr-error: #cf000f;
+}
+
+body {
+  font-family: var(--ff-ubuntu-400);
+  background-color: var(--clr-black-400);
+}
+
+.container {
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container.container--app {
+  justify-content: initial;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  white-space: nowrap;
+  border-width: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.btn {
+  --pad: .625em;
+
+  padding-top: var(--pad);
+  padding-bottom: var(--pad);
+  color: var(--clr-white);
+  font-family: inherit;
+  font-size: 1rem; /* 16px */
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  background-image: var(--clr-main-gradient);
+  border-radius: .3125em;
+  cursor: pointer;
+}
+
+.btn.btn--reveal-pwd {
+  --pad: .545em;
+  
+  font-size: .75rem; /* 12px */
+}
+
+.link {
+  color: inherit;
+  text-decoration-line: underline;
+  font-weight: 900;
+}
+
+.text {
+  margin-top: 2.5rem;
+}
+
+.text > p {
+  padding-top: 2.5em;
+  text-align: center;
+  font-size: .875rem; /* 14px */
+  border-top: 1px solid var(--clr-border);
+}
+
+.message {
+  --bd-diagonal: .5em;
+
+  display: none;
+  padding: 1em;
+  font-size: 1.25rem; /* 20px */
+  font-weight: 900;
+  text-align: center;
+  background-color: var(--clr-white);
+  border-top-right-radius: var(--bd-diagonal);
+  border-bottom-left-radius: var(--bd-diagonal);
+}
+
+.container > .message {
+  margin-bottom: 1.5em;
+} 
+
+.message.message--success {
+  color: var(--clr-success);
+}

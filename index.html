@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+   
+    <title>TODO List | Crie uma conta agora mesmo!</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- CSS local. -->
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/form.css">
+
+    <!-- jQuery 3.6.0 -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous">
+    </script>
+
+    <!-- Font Awesome 5 -->
+    <script src="https://kit.fontawesome.com/190e245c5e.js" crossorigin="anonymous"></script>
+
+    <!-- JS local. -->
+    <script src="js/revealPwd.js" defer></script>
+    <script src="js/index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-wrapper">
+        <form class="form">
+          <legend class="form__title">
+            <span class="fas fa-user-plus"></span> Criar conta
+          </legend>
+          
+          <div class="form__errors">
+            <!-- Erros dinâmicos. -->
+            <ul class="errors-list" id="errors"></ul>
+            <span class="fas fa-exclamation-circle"></span>
+          </div>
+
+          <fieldset>
+            <label class="visually-hidden" for="name">Digite seu nome:</label>
+            <input class="form__input" id="name" name="nome" type="text" placeholder="Seu Nome" required>
+          </fieldset>
+
+          <fieldset>
+            <label class="visually-hidden" for="email">Digite seu email:</label>
+            <input class="form__input" id="email" name="email" type="email" placeholder="Seu Email" required>
+          </fieldset>
+
+          <fieldset id="field-pwd">
+            <label class="visually-hidden" for="password">Digite uma senha:</label>
+            <input class="form__input" id="password" name="senha" type="password" placeholder="Senha" required>
+            <button class="btn btn--reveal-pwd" id="reveal-pwd" type="button" title="Ver senha" data-reveal="0">
+              <span class="far fa-eye-slash"></span>
+            </button>
+          </fieldset>
+
+          <fieldset>
+            <label class="visually-hidden" for="confirm-pwd">Confirme sua senha:</label>
+            <input class="form__input" id="confirm-pwd" name="confirmar-senha" type="password" placeholder="Confirmar Senha" required>
+          </fieldset>
+
+          <button class="btn" type="submit">
+            Criar conta
+          </button>
+        </form>
+
+        <div class="text">
+          <p>
+            Já possui uma conta? <a class="link" href="./pages/login.html">Faça login aqui</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
