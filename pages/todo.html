@@ -79,12 +79,12 @@
       <main>
         <section class="todo">
           <div>
-            <form>
+            <form class="form" id="form">
               <fieldset>
                 <label class="visually-hidden" for="title">Digite o título da tarefa:</label>
                 <input class="todo__input" id="title" type="text" maxlength="255" required>
                 
-                <button class="btn" id="add-task" type="submit" title="Adicionar tarefa">
+                <button class="btn" type="submit" form="form" title="Adicionar tarefa">
                   <span class="fas fa-plus"></span>
                 </button>
               </fieldset>

@@ -41,6 +41,8 @@ $('#week-day').text(now.format('dddd'));
 const idUsuario = localStorage.getItem('idUsuario');
 
 // Trata eventos das tarefas.
+
+// Exibe todas as tarefas em seus devidos lugares.
 $.get({
   url: `http://localhost:3000/api/tarefas/${idUsuario}`,
   success: (result) => {
@@ -63,6 +65,25 @@ $.get({
     }
   },
   error: () => console.log('Deu ruim na requisição, tente novamente'),
+});
+
+// Adiciona uma tarefa no final das tarefas.
+$('#form').submit((event) => {
+  event.preventDefault();
+  
+  $.post({
+    url: 'http://localhost:3000/api/tarefa',
+    data: JSON.stringify({
+      titulo: $('#title').val(),
+      status: 0,
+      id_usuario: parseInt(idUsuario), // ID do usuário logado.
+    }),
+    contentType: 'application/json',
+    success: (result) => {
+      addTarefaFazer(result.tarefaCriada);
+    },
+    error: () => console.log('Deu ruim na requisição, tente novamente'),
+  });
 });
 
 /** 
@@ -109,7 +130,7 @@ function addTarefaFazerDepois(tarefa) {
 function addTarefaFeito(tarefa) {
   const tarefaHTML = `
     <li id="tarefa${tarefa.id_tarefa}">
-      <p>${tarefa.titulo}</p>
+      <p><del>${tarefa.titulo}</del></p>
     </li>
   `;
   $('#done').append(tarefaHTML);
